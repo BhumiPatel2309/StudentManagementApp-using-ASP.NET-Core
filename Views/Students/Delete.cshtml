@@ -1,0 +1,9 @@
+﻿@model StudentManagementApp.Models.Student
+
+<h2>Delete Student</h2>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <p>Are you sure you want to delete @Model.Name?</p>
+    <button type="submit">Delete</button>
+</form>

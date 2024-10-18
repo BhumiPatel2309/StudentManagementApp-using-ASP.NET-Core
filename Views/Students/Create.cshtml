@@ -1,0 +1,24 @@
+﻿@model StudentManagementApp.Models.Student
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Create New Student</h2>
+
+    <form asp-action="Create">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Course</label>
+            <input asp-for="Course" class="form-control" />
+            <span asp-validation-for="Course" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+</div>

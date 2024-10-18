@@ -1,0 +1,35 @@
+﻿@model IEnumerable<StudentManagementApp.Models.Student>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Student List</h2>
+
+    <div class="d-flex justify-content-between mb-4">
+        <a href="@Url.Action("Create")" class="btn btn-primary">Create New Student</a>
+        <a href="@Url.Action("Export")" class="btn btn-success">Export Data</a>
+    </div>
+
+    <table class="table table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.Email</td>
+                    <td>@student.Course</td>
+                    <td class="text-center">
+                        <a href="@Url.Action("Edit", new { id = student.Id })" class="btn btn-warning">Edit</a>
+                        <a href="@Url.Action("Delete", new { id = student.Id })" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
